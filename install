@@ -1,4 +1,11 @@
 #!/bin/bash
+sudo apt-get install vim tmux zsh curl
 # zsh
+chsh -s `which zsh`
+ln -s $PWD/.zshrc $HOME/.zshrc
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 # vim
+ln -s $PWD/.vimrc $HOME/.vimrc
 # tmux
+ln -s $PWD/.tmux.conf $HOME/.tmux.conf
+
