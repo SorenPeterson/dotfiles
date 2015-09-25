@@ -1,0 +1,14 @@
+#!/bin/bash
+sudo apt-get install vim tmux zsh curl git git-core
+# zsh
+chsh -s `which zsh`
+ln -s $PWD/.zshrc $HOME/.zshrc
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+# vim
+ln -s $PWD/.vimrc $HOME/.vimrc
+git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+# tmux
+ln -s $PWD/.tmux.conf $HOME/.tmux.conf
+# meteor
+# curl https://install.meteor.com/ | sh
+
