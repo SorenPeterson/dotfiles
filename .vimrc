@@ -37,6 +37,7 @@ Plugin 'jelera/vim-javascript-syntax'
 Plugin 'sukima/xmledit'
 Plugin 'msanders/snipmate.vim'
 Plugin 'scrooloose/nerdtree'
+Plugin 'Valloric/YouCompleteMe'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -83,3 +84,5 @@ set nofoldenable
 set foldlevel=1
 hi Folded ctermbg=0
 hi Folded ctermfg=2
+
+set noswapfile
