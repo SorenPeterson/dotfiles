@@ -86,3 +86,5 @@ hi Folded ctermbg=0
 hi Folded ctermfg=2
 
 set noswapfile
+
+set backspace=indent,eol,start
