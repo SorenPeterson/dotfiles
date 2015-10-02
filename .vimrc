@@ -37,7 +37,6 @@ Plugin 'jelera/vim-javascript-syntax'
 Plugin 'sukima/xmledit'
 Plugin 'msanders/snipmate.vim'
 Plugin 'scrooloose/nerdtree'
-Plugin 'terryma/vim-multiple-cursors'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
