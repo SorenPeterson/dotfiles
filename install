@@ -1,14 +1,42 @@
 #!/bin/bash
-sudo apt-get install vim tmux zsh curl git git-core
+
+# install brew
+which brew
+if [ $? = 1 ]; then
+	ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+fi
+
 # zsh
-chsh -s `which zsh`
-ln -s $PWD/.zshrc $HOME/.zshrc
-sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+if [ $SHELL != "/bin/zsh" ]; then
+	chsh -s $(which zsh)
+	ln -s $PWD/.zshrc $HOME/.zshrc
+	sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+fi
+
 # vim
+which vim
+if [ $? = 1 ]; then
+	brew install vim
+fi
 ln -s $PWD/.vimrc $HOME/.vimrc
 git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-# tmux
-ln -s $PWD/.tmux.conf $HOME/.tmux.conf
-# meteor
-# curl https://install.meteor.com/ | sh
 
+# tmux
+which tmux
+if [ $? = 1 ]; then
+	brew install tmux
+fi
+ln -s $PWD/.tmux.conf $HOME/.tmux.conf
+
+# meteor
+which meteor
+if [ $? = 1 ]; then
+	curl https://install.meteor.com/ | sh
+fi
+
+# karabiner
+alias karabiner=/Applications/Karabiner.app/Contents/Library/bin/karabiner
+ln -s $PWD/private.sml $HOM/Library/Application\ Support/Karabiner/private.xml
+sh karabiner-import.sh
+karabiner reloadxml
+karabiner relaunch
