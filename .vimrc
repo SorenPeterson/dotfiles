@@ -87,3 +87,6 @@ hi Folded ctermfg=2
 set noswapfile
 
 set backspace=indent,eol,start
+
+nnoremap <C-H> <C-W><C-H>
+nnoremap <C-L> <C-W><C-L>
