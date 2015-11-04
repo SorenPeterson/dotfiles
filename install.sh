@@ -28,19 +28,21 @@ install tmux
 
 # dotfile linking
 link() {
-	if [ -L $HOME/$1 ]
+	if [ -L $2/$1 ]
 	then
-		ln -s $PWD/$1 $HOME/$1
-	elif [ -f $HOME/$1 ]
+		rm $2/$1
+		ln -s $PWD/$1 $2/$1
+	elif [ -f $2/$1 ]
 	then
-		ln -s $PWD/$1 $HOME/$1
+		mv $2/$1 $2/$1.old
+		ln -s $PWD/$1 $2/$1
 	else
-		ln -s $PWD/$1 $HOME/$1
+		ln -s $PWD/$1 $2/$1
 	fi
 }
 
-link .vimrc
-link .tmux.conf
+link .vimrc $HOME
+link .tmux.conf $HOME
 
 # vim-specific
 if ! [ -d ~/.vim/bundle/Vundle.vim ]
@@ -65,7 +67,7 @@ fi
 
 # karabiner
 alias karabiner=/Applications/Karabiner.app/Contents/Library/bin/karabiner
-ln -s $PWD/private.xml $HOME/Library/Application\ Support/Karabiner/private.xml
+link private.xml $HOME/Library/Application\ Support/Karabiner/private.xml
 sh karabiner-import.sh
 karabiner reloadxml
 karabiner relaunch
