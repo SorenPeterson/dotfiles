@@ -30,7 +30,13 @@ install tmux
 link() {
 	if [ -L $HOME/$1 ]
 	then
-
+		ln -s $PWD/$1 $HOME/$1
+	elif [ -f $HOME/$1 ]
+	then
+		ln -s $PWD/$1 $HOME/$1
+	else
+		ln -s $PWD/$1 $HOME/$1
+	fi
 }
 
 link .vimrc
