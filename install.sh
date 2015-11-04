@@ -28,16 +28,18 @@ install tmux
 
 # dotfile linking
 link() {
-	if [ -L $2/$1 ]
+# $1: Name of file
+# $2: Location of link
+	if [ -L "$2/$1" ] # There is already a symbolic link in place
 	then
-		rm $2/$1
-		ln -s $PWD/$1 $2/$1
-	elif [ -f $2/$1 ]
+		rm $2/$1 # Remove the link
+		ln -s $PWD/$1 "$2/$1" # And create one for these dotfiles
+	elif [ -f "$2/$1" ] # There is a file already there
 	then
-		mv $2/$1 $2/$1.old
-		ln -s $PWD/$1 $2/$1
+		mv "$2/$1" "$2/$1.old" # Move it to a safe place
+		ln -s $PWD/$1 "$2/$1" # And create the link
 	else
-		ln -s $PWD/$1 $2/$1
+		ln -s $PWD/$1 "$2/$1"
 	fi
 }
 
@@ -67,8 +69,8 @@ fi
 
 # karabiner
 alias karabiner=/Applications/Karabiner.app/Contents/Library/bin/karabiner
-link private.xml $HOME/Library/Application\ Support/Karabiner/private.xml
-sh karabiner-import.sh
-karabiner reloadxml
-karabiner relaunch
+link private.xml "$HOME/Library/Application Support/Karabiner/"
+# sh karabiner-import.sh
+# karabiner reloadxml
+# karabiner relaunch
 
