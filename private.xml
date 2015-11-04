@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<root>
+	<item>
+		<name>Command_L to Command_R</name>
+		<identifier>private.command_l_to_command_r</indentifier>
+		<autogen>__KeyToKey__ KeyCode::COMMAND_L, KeyCode::COMMAND_R</autogen>
+	</item>
+	<item>
+		<name>Left Space (Application) to Command_L</name>
+		<identifier>private.application_to_command_l</identifier>
+		<autogen>__KeyToKey__ KeyCode::PC_APPLICATION, KeyCode::COMMAND_L</autogen>
+	</item>
+	<item>
+		<name>Return to Shift_L</name>
+		<identifier>private.return_to_shift_l</identifier>
+		<autogen>__KeyToKey__ KeyCode::RETURN, KeyCode::SHIFT_L</autogen>
+	</item>
+</root>
