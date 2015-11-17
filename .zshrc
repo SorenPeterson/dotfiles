@@ -1,5 +1,5 @@
 #Path to your oh-my-zsh installation.
-export ZSH=/home/otter/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -78,21 +78,20 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
 export PATH=$HOME/local/bin:$PATH
 export PATH=/sbin:/usr/sbin:$PATH
 
 alias otterhive="ssh -p 5892 noface@otterhive.com"
 
-export NVM_DIR="/home/otter/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+export NVM_DIR=$HOME/.nvm
+source $(brew --prefix nvm)/nvm.sh
 
 alias co="checkout"
 alias la="ls -la"
 alias lr="ls -R"
 alias lar="ls -laR"
 alias pax="ps -ax"
+alias lockscreen='/System/Library/CoreServices/"Menu Extras"/User.menu/Contents/Resources/CGSession -suspend'
 
 export EDITOR="vim"
 
@@ -100,3 +99,5 @@ export ANDROID_HOME="$HOME/Programming/android-sdk-linux"
 export PATH="$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$PATH"
 
 nvm use stable
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
