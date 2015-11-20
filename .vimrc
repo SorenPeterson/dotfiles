@@ -66,8 +66,11 @@ map <Space>j <Plug>(easymotion-j)
 map <Space>k <Plug>(easymotion-k)
 map <Space>w <Plug>(easymotion-w)
 
-set tabstop=4
-set shiftwidth=4
+" set tabstop=4
+" set shiftwidth=4
+autocmd Filetype html setlocal ts=2 sw=2 expandtab
+autocmd Filetype ruby setlocal ts=2 sw=2 expandtab
+autocmd Filetype javascript setlocal ts=4 sw=4 sts=0 noexpandtab
 
 noremap <Up> <nop>
 noremap <Down> <nop>
