@@ -77,6 +77,8 @@ noremap <Down> <nop>
 noremap <Left> <nop>
 noremap <Right> <nop>
 
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
 "folding settings
 set foldmethod=indent
 set foldnestmax=10
