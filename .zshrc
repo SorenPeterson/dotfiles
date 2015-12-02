@@ -87,6 +87,7 @@ export NVM_DIR=$HOME/.nvm
 source $(brew --prefix nvm)/nvm.sh
 
 alias co="checkout"
+alias be="bundle exec"
 alias la="ls -la"
 alias lr="ls -R"
 alias lar="ls -laR"
