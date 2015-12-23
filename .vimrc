@@ -28,9 +28,7 @@ Plugin 'gmarik/Vundle.vim'
 
 Plugin 'kien/ctrlp.vim'
 Plugin 'airblade/vim-gitgutter'
-Plugin 'tpope/vim-surround'
 Plugin 'Lokaltog/vim-easymotion'
-Plugin 'mxw/vim-jsx'
 Plugin 'vim-auto-save'
 Plugin 'danro/rename.vim'
 Plugin 'jelera/vim-javascript-syntax'
@@ -68,13 +66,18 @@ map <Space>j <Plug>(easymotion-j)
 map <Space>k <Plug>(easymotion-k)
 map <Space>w <Plug>(easymotion-w)
 
-set tabstop=4
-set shiftwidth=4
+" set tabstop=4
+" set shiftwidth=4
+autocmd Filetype html setlocal ts=2 sw=2 expandtab
+autocmd Filetype ruby setlocal ts=2 sw=2 expandtab
+autocmd Filetype javascript setlocal ts=4 sw=4 sts=0 noexpandtab
 
 noremap <Up> <nop>
 noremap <Down> <nop>
 noremap <Left> <nop>
 noremap <Right> <nop>
+
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 "folding settings
 set foldmethod=indent
