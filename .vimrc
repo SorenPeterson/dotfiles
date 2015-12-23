@@ -90,3 +90,6 @@ set backspace=indent,eol,start
 
 nnoremap <C-H> <C-W><C-H>
 nnoremap <C-L> <C-W><C-L>
+
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
